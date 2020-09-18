@@ -1,0 +1,33 @@
+{
+	"manifest_version": 2,
+	"name": "dbdiagram.hack",
+	"description": "This extension change dbdiagram.io theme to dark and allows you to change table color",
+	"version": "0.0.1",
+	"browser_action": {
+		"default_icon": {
+			"16": "icons/share_16.png",
+			"32": "icons/share_32.png",
+			"64": "icons/share_64.png",
+			"128": "icons/share_128.png"
+		},
+		"default_popup": "popup.html"
+	},
+	"icons": {
+		"16": "icons/share_16.png",
+		"32": "icons/share_32.png",
+		"64": "icons/share_64.png",
+		"128": "icons/share_128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [ "*://*/*" ],
+			"js": [ "index.js" ]
+		}
+	],
+	"permissions": ["activeTab", "storage", "declarativeContent"],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"options_page": "options.html"
+}
